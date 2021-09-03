@@ -21,7 +21,7 @@ class Test_PHP_Fatal_Error extends WP_UnitTestCase {
 	 *
 	 * @return void
 	 */
-	public function test_php_fatal_error() {
+	public function test_run_php_fatal_error() {
 
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
