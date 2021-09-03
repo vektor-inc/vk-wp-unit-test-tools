@@ -4,7 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "VektorInc\\VkWpUnitTestTools\\": "src/"
+            "VK_WP_Unit_Test_Tools\\": "src/"
         }
     },
     "authors": [
