@@ -5,9 +5,9 @@
  * @package VK Test PHP Fatal Error
  */
 
-require_once dirname( dirname( dirname( dirname( dirname( dirname(__FILE__ ) ) ) ) ) ) . '/autoload.php';
+require_once dirname( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) ) . '/autoload.php';
 
-use VK_WP_Unit_Test_Tools\VK_WP_Unit_Test_Helpers;
+use VK_WP_Unit_Test_Tools\VkWpUnitTestHelpers;
 
 /**
  * PHP Fatal Error
@@ -30,7 +30,7 @@ class Test_PHP_Fatal_Error extends WP_UnitTestCase {
 		/******************************************
 		 * テスト用の投稿を作成 */
 
-		$a          = new VK_WP_Unit_Test_Helpers();
+		$a          = new VkWpUnitTestHelpers();
 		$test_posts = $a->create_test_posts();
 
 		/******************************************

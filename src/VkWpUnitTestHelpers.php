@@ -9,9 +9,9 @@
 namespace VK_WP_Unit_Test_Tools;
 
 /**
- * VK_WP_Unit_Test_Helpers
+ * VkWpUnitTestHelpers
  */
-class VK_WP_Unit_Test_Helpers {
+class VkWpUnitTestHelpers {
 
 	/**
 	 * PHP Unit テストにあたって、各種投稿やカスタム投稿タイプ、カテゴリーを登録します。
