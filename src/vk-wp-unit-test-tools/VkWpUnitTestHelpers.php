@@ -3,7 +3,7 @@
  * PHP Unit Test Helpers for WordPress
  *
  * @package VK WP Unit Test Tools
- * @version 0.2.0
+ * @version 0.3.0
  */
 
 namespace VK_WP_Unit_Test_Tools;
