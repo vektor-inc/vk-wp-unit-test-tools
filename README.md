@@ -1,4 +1,4 @@
-# vk-wp-unit-test-tools
+# VK WP Unit Test Tools
 ## これは何？
 
 ### テーマやプラグインの PHP Fatal Error をチェック 
