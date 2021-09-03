@@ -3,7 +3,7 @@
  * PHP Unit Test Helpers for WordPress
  *
  * @package VK WP Unit Test Tools
- * @version 0.6.0
+ * @version 0.7.0
  */
 
 namespace VK_WP_Unit_Test_Tools;
@@ -12,10 +12,6 @@ namespace VK_WP_Unit_Test_Tools;
  * VkWpUnitTestHelpers
  */
 class VkWpUnitTestHelpers {
-
-	public static function test() {
-		echo '━━━━━━━━━━━━━━━━━━━━'."<br>\n";
-	}
 
 	/**
 	 * PHP Unit テストにあたって、各種投稿やカスタム投稿タイプ、カテゴリーを登録します。
