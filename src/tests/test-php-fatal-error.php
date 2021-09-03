@@ -21,7 +21,7 @@ class Test_PHP_Fatal_Error extends WP_UnitTestCase {
 	 *
 	 * @return void
 	 */
-	public function test_php_faral_error() {
+	public function test_php_fatal_error() {
 
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
@@ -187,6 +187,8 @@ class Test_PHP_Fatal_Error extends WP_UnitTestCase {
 				'target_url' => get_permalink( $test_posts['event_post_id'] ),
 			),
 		);
+
+		$test_array = apply_filters( 'php_fatal_error_test_array', $test_array );
 
 		foreach ( $test_array as $value ) {
 			if ( ! empty( $value['options'] ) && is_array( $value['options'] ) ) {
