@@ -1,9 +1,10 @@
 <?php
 /**
  * PHP Unit Test Helpers for WordPress
+ * テストをするにあたって必要な下準備をするための処理
  *
  * @package VK WP Unit Test Tools
- * @version 0.7.0
+ * @version 0.8.0
  */
 
 namespace VK_WP_Unit_Test_Tools;

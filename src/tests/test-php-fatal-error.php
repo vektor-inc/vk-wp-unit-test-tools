@@ -1,8 +1,10 @@
 <?php
 /**
- * Test for PHP Error
+ * Test for PHP Fatal Error
  *
- * @package VK Test PHP Fatal Error
+ * 各ページで致命的なエラーがないか確認するためのテストです.
+ *
+ * @package VK WP Unit Test Tools
  */
 
 require_once dirname( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) ) . '/autoload.php';
@@ -30,8 +32,7 @@ class Test_PHP_Fatal_Error extends WP_UnitTestCase {
 		/******************************************
 		 * テスト用の投稿を作成 */
 
-		$a          = new VkWpUnitTestHelpers();
-		$test_posts = $a->create_test_posts();
+		$test_posts = VkWpUnitTestHelpers::create_test_posts();
 
 		/******************************************
 		 * 確認するURLと設定の配列 */
@@ -211,6 +212,7 @@ class Test_PHP_Fatal_Error extends WP_UnitTestCase {
 			 *「OK, but incomplete, skipped, or risky tests!」をくらってしまうのでダミーで実行している.  */
 			$this->assertEquals( true, true );
 
+			// 設定したオプション値を削除してリセット.
 			if ( ! empty( $value['options'] ) && is_array( $value['options'] ) ) {
 				foreach ( $value['options'] as $option_key => $option_value ) {
 					delete_option( $option_key );
