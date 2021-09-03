@@ -34,4 +34,8 @@ PHPUnitの設定ファイル phpunit.xml などに 以下を追加
 <directory prefix="test-" suffix=".php">./vendor/vektor-inc/vk-wp-unit-test-tools/src/tests/</directory>
 ```
 
-これで、各リポジトリの package.json などで設定してある PHPUnit を走らせるコマンドを叩けばOKです。
+これで、各リポジトリの package.json などで設定してある PHPUnit を走らせるコマンドを叩けば動きます。
+
+ただし、手探りで作ったので、普通のエンジニアの方からしたらツッコミ所満載だと思います。
+
+これおかしいんじゃね？普通はこうじゃね？というプルリクお待ちしております。
