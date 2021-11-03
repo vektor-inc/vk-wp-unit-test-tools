@@ -23,7 +23,7 @@ WordPress のサイトの各ページで PHP の Fatal Error が発生しない�
 #### インストール
 
 ```
-$ composer require vektor-inc/vk-wp-unit-test-tools
+$ composer require --dev vektor-inc/vk-wp-unit-test-tools
 ```
 
 #### 設定
