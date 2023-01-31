@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * PHP Unit Test Helpers for WordPress
  * テストをするにあたって必要な下準備をするための処理
@@ -23,12 +23,12 @@ class VkWpUnitTestHelpers {
 
 		$test_users = array();
 
-		// テスト用ユーザーを発行
-		$userdata = array(
-			'user_login'  =>  'kurudrive',
-			'user_url'    => 'https://vektor-inc.co.jp',
-			'user_pass'   =>  'ishikawa',
-			'display_name' => 'Hidekazu Ishikawa'
+		// テスト用ユーザーを発行.
+		$userdata                = array(
+			'user_login'   => 'admin',
+			'user_url'     => 'https://vektor-inc.co.jp',
+			'user_pass'    => 'password',
+			'display_name' => 'admin',
 		);
 		$test_users['test_user'] = wp_insert_user( $userdata, $userdata['user_pass'] );
 
@@ -118,7 +118,7 @@ class VkWpUnitTestHelpers {
 			'post_title'   => 'Parent Page',
 			'post_type'    => 'page',
 			'post_status'  => 'publish',
-			'post_author'   => $test_users['test_user'],
+			'post_author'  => $test_users['test_user'],
 			'post_content' => 'content',
 		);
 		$test_posts['parent_page_id'] = wp_insert_post( $post );
