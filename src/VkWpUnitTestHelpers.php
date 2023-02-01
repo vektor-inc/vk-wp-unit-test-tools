@@ -25,10 +25,10 @@ class VkWpUnitTestHelpers {
 
 		// テスト用ユーザーを発行.
 		$userdata                = array(
-			'user_login'   => 'admin',
+			'user_login'   => 'vektor',
 			'user_url'     => 'https://vektor-inc.co.jp',
 			'user_pass'    => 'password',
-			'display_name' => 'admin',
+			'display_name' => 'Vektor, Inc.',
 		);
 		$test_users['test_user'] = wp_insert_user( $userdata, $userdata['user_pass'] );
 
