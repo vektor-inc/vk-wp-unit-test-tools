@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * PHP Unit Test Helpers for WordPress
  * テストをするにあたって必要な下準備をするための処理
@@ -15,6 +15,27 @@ namespace VK_WP_Unit_Test_Tools;
 class VkWpUnitTestHelpers {
 
 	/**
+	 * PHP Unit テストにあたって、ユーザーを登録します。
+	 *
+	 * @return array $test_users : 作成したユーザーidを配列で返します。
+	 */
+	public static function create_test_users() {
+
+		$test_users = array();
+
+		// テスト用ユーザーを発行.
+		$userdata                = array(
+			'user_login'   => 'vektor',
+			'user_url'     => 'https://vektor-inc.co.jp',
+			'user_pass'    => 'password',
+			'display_name' => 'Vektor, Inc.',
+		);
+		$test_users['test_user'] = wp_insert_user( $userdata, $userdata['user_pass'] );
+
+		return $test_users;
+	}
+
+	/**
 	 * PHP Unit テストにあたって、各種投稿やカスタム投稿タイプ、カテゴリーを登録します。
 	 *
 	 * @return array $test_posts : 作成した投稿の記事idなどを配列で返します。
@@ -22,6 +43,7 @@ class VkWpUnitTestHelpers {
 	public static function create_test_posts() {
 
 		$test_posts = array();
+		$test_users = self::create_test_users();
 
 		/******************************************
 		 * カテゴリーの登録 */
@@ -83,6 +105,7 @@ class VkWpUnitTestHelpers {
 		$post                  = array(
 			'post_title'    => 'Test Post',
 			'post_status'   => 'publish',
+			'post_author'   => $test_users['test_user'],
 			'post_content'  => 'content',
 			'post_category' => array( $test_posts['parent_category_id'] ),
 		);
@@ -95,6 +118,7 @@ class VkWpUnitTestHelpers {
 			'post_title'   => 'Parent Page',
 			'post_type'    => 'page',
 			'post_status'  => 'publish',
+			'post_author'  => $test_users['test_user'],
 			'post_content' => 'content',
 		);
 		$test_posts['parent_page_id'] = wp_insert_post( $post );
@@ -104,6 +128,7 @@ class VkWpUnitTestHelpers {
 			'post_title'   => 'Child Page',
 			'post_type'    => 'page',
 			'post_status'  => 'publish',
+			'post_author'  => $test_users['test_user'],
 			'post_content' => 'content',
 			'post_parent'  => $test_posts['parent_page_id'],
 
@@ -115,6 +140,7 @@ class VkWpUnitTestHelpers {
 			'post_title'   => 'Post Top',
 			'post_type'    => 'page',
 			'post_status'  => 'publish',
+			'post_author'  => $test_users['test_user'],
 			'post_content' => 'content',
 		);
 		$test_posts['home_page_id'] = wp_insert_post( $post );
@@ -124,6 +150,7 @@ class VkWpUnitTestHelpers {
 			'post_title'   => 'Front Page',
 			'post_type'    => 'page',
 			'post_status'  => 'publish',
+			'post_author'  => $test_users['test_user'],
 			'post_content' => 'content',
 		);
 		$test_posts['front_page_id'] = wp_insert_post( $post );
@@ -133,6 +160,7 @@ class VkWpUnitTestHelpers {
 			'post_title'   => 'Event Test Post',
 			'post_type'    => 'event',
 			'post_status'  => 'publish',
+			'post_author'  => $test_users['test_user'],
 			'post_content' => 'content',
 		);
 		$test_posts['event_post_id'] = wp_insert_post( $post );
