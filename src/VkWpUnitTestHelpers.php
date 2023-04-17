@@ -4,7 +4,7 @@
  * テストをするにあたって必要な下準備をするための処理
  *
  * @package VK WP Unit Test Tools
- * @version 0.11.0
+ * @version 0.12.0
  */
 
 namespace VK_WP_Unit_Test_Tools;
@@ -68,6 +68,14 @@ class VkWpUnitTestHelpers {
 		$test_posts['no_post_category_id'] = wp_insert_category( $catarr );
 
 		/******************************************
+		 * タグの登録 */
+		$args                      = array(
+			'slug' => 'test_tag_name',
+		);
+		$term_info                 = wp_insert_term( 'test_tag_name', 'post_tag', $args );
+		$test_posts['test_tag_id'] = $term_info['term_id'];
+
+		/******************************************
 		 * 投稿タイプ event を追加 */
 		register_post_type(
 			'event',
@@ -112,6 +120,7 @@ class VkWpUnitTestHelpers {
 		$test_posts['post_id'] = wp_insert_post( $post );
 		// 投稿にカテゴリー指定.
 		wp_set_object_terms( $test_posts['post_id'], 'child_category', 'category' );
+		wp_set_object_terms( $test_posts['post_id'], 'test_tag_name', 'post_tag' );
 
 		// 固定ページ Parent Page を投稿.
 		$post                         = array(
