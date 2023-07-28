@@ -40,8 +40,6 @@ define( 'GUTENBERG_LOAD_VENDOR_SCRIPTS', false );
  */
 function _manually_load_plugin() {
 
-    require_once dirname( dirname( __FILE__ ) ) . '/vendor/autoload.php';
-
     register_theme_directory( dirname( dirname( __FILE__ ) ) . '/temp/themes' );
 	search_theme_directories();
 
