@@ -45,7 +45,7 @@ function _manually_load_plugin() {
     register_theme_directory( dirname( dirname( __FILE__ ) ) . '/temp/themes' );
 	search_theme_directories();
 
-    // Lightning 有効化（インストールは wp-env.json で行っている）
+    // Lightning 有効化
 	switch_theme( 'x-t9' );
 	// テスト時になぜか g2 モードになるので、g3 に変更
 	// update_option( 'lightning_theme_generation', 'g3' );
