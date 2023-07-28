@@ -7,7 +7,7 @@
  * @package VK WP Unit Test Tools
  */
 
-require_once dirname( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) ) . '/autoload.php';
+//require_once dirname( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) ) . '/autoload.php';
 
 use VK_WP_Unit_Test_Tools\VkWpUnitTestHelpers;
 
